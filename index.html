@@ -1,360 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Email Guide</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        
-        header {
-            background: linear-gradient(to right, #4a6ee0, #6a11cb);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .content {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 0;
-        }
-        
-        .methods {
-            flex: 1;
-            min-width: 300px;
-            padding: 30px;
-            background: #f9f9f9;
-        }
-        
-        .preview {
-            flex: 1;
-            min-width: 300px;
-            padding: 30px;
-            background: white;
-        }
-        
-        h2 {
-            color: #4a6ee0;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eaeaea;
-        }
-        
-        h3 {
-            color: #6a11cb;
-            margin: 25px 0 15px;
-        }
-        
-        .method-card {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid #4a6ee0;
-        }
-        
-        .method-card h4 {
-            color: #4a6ee0;
-            margin-bottom: 10px;
-        }
-        
-        .email-preview {
-            background: #f5f5f5;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-        
-        .email-header {
-            background: #4a6ee0;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            border-radius: 5px 5px 0 0;
-        }
-        
-        .email-body {
-            background: white;
-            padding: 20px;
-        }
-        
-        .email-footer {
-            background: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            border-radius: 0 0 5px 5px;
-            font-size: 0.9rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #4a6ee0;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background 0.3s;
-            margin-top: 10px;
-        }
-        
-        .btn:hover {
-            background: #3a5ec0;
-        }
-        
-        code {
-            background: #f5f5f5;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-        }
-        
-        pre {
-            background: #2d2d2d;
-            color: #f8f8f2;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            margin: 15px 0;
-            font-size: 0.85rem;
-        }
-        
-        .tip {
-            background: #e6f7ff;
-            border-left: 4px solid #1890ff;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 0 4px 4px 0;
-        }
-        
-        .warning {
-            background: #fffbe6;
-            border-left: 4px solid #faad14;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 0 4px 4px 0;
-        }
-        
-        @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John Doe — Portfolio</title>
+  <style>
+    :root {
+      --bg: #fff;
+      --text: #000;
+      --subtext: #555;
+      --card-bg: #f5f5f5;
+      --accent: #0071e3;
+    }
+    body.dark {
+      --bg: #000;
+      --text: #fff;
+      --subtext: #ccc;
+      --card-bg: #111;
+      --accent: #0a84ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      color: var(--text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+    body.dark header {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    header h1 {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      font-size: 0.95rem;
+      color: var(--text);
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .toggle {
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    /* Progress bar */
+    #progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--accent);
+      width: 0;
+      z-index: 2000;
+      transition: width 0.25s;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(to bottom, #fafafa, #eaeaea);
+      position: relative;
+      overflow: hidden;
+    }
+    body.dark .hero {
+      background: linear-gradient(to bottom, #111, #000);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 120%;
+      background: radial-gradient(circle at center, rgba(0,0,0,0.05), transparent);
+      top: 0;
+      left: 0;
+      transform: translateY(0);
+      transition: transform 0.2s;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .typing {
+      color: var(--accent);
+      font-size: 1.3rem;
+      height: 1.5em;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid var(--accent);
+      width: 0;
+      animation: typing 4s steps(30, end) infinite alternate;
+    }
+
+    @keyframes typing {
+      0% { width: 0; }
+      50% { width: 100%; }
+      100% { width: 0; }
+    }
+
+    /* Section general */
+    section {
+      padding: 6rem 2rem;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: var(--subtext);
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    /* Skills */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .skills-list span {
+      border: 1px solid #ddd;
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      background-color: var(--card-bg);
+      color: var(--text);
+      transition: all 0.3s;
+    }
+
+    .skills-list span:hover {
+      transform: translateY(-3px);
+      background-color: var(--accent);
+      color: #fff;
+    }
+
+    /* Projects */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .project {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.4s;
+    }
+
+    .project:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .project h4 {
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      font-size: 0.9rem;
+      color: var(--subtext);
+    }
+
+    /* Floating Contact Button */
+    .contact-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.4rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+      z-index: 1500;
+    }
+
+    .contact-btn:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      nav {
+        margin-top: 0.5rem;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1>How to Send HTML Emails</h1>
-            <p class="subtitle">A complete guide to creating and sending styled emails with backgrounds and images</p>
-        </header>
-        
-        <div class="content">
-            <div class="methods">
-                <h2>Methods for Sending HTML Emails</h2>
-                
-                <div class="method-card">
-                    <h4>1. Email Marketing Platforms</h4>
-                    <p>Use services like Mailchimp, Constant Contact, or Sendinblue that provide templates and sending tools.</p>
-                    <ul>
-                        <li>Drag-and-drop editors</li>
-                        <li>Pre-designed templates</li>
-                        <li>Analytics and tracking</li>
-                        <li>List management</li>
-                    </ul>
-                    <a href="#" class="btn">Explore Platforms</a>
-                </div>
-                
-                <div class="method-card">
-                    <h4>2. Gmail/Outlook (Manual)</h4>
-                    <p>Copy and paste HTML directly into email clients that support HTML.</p>
-                    <ol>
-                        <li>Create your HTML email</li>
-                        <li>Use browser developer tools to copy the element</li>
-                        <li>Paste into Gmail or Outlook compose window</li>
-                    </ol>
-                    <a href="#" class="btn" id="copyHtmlBtn">Copy HTML Code</a>
-                </div>
-                
-                <div class="method-card">
-                    <h4>3. Programming (SMTP)</h4>
-                    <p>Use code to send HTML emails programmatically with libraries like Nodemailer (Node.js) or PHPMailer.</p>
-                    <pre><code>// Node.js example with Nodemailer
-const nodemailer = require('nodemailer');
+  <div id="progress"></div>
 
-let transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'your@gmail.com',
-    pass: 'your-password'
-  }
-});
+  <header>
+    <h1>John Doe</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <span class="toggle" id="themeToggle">🌙</span>
+    </nav>
+  </header>
 
-let mailOptions = {
-  from: 'your@gmail.com',
-  to: 'recipient@example.com',
-  subject: 'HTML Email',
-  html: '&lt;h1&gt;Hello World&lt;/h1&gt;&lt;p&gt;This is HTML content&lt;/p&gt;'
-};
+  <section class="hero" id="home">
+    <h2>Hello, I’m John Doe</h2>
+    <div class="typing">Web Developer. Designer. Creator.</div>
+  </section>
 
-transporter.sendMail(mailOptions);</code></pre>
-                    <a href="#" class="btn">View More Examples</a>
-                </div>
-                
-                <div class="tip">
-                    <strong>Tip:</strong> Always test your HTML emails across different clients (Gmail, Outlook, Apple Mail) as they render HTML differently.
-                </div>
-                
-                <div class="warning">
-                    <strong>Important:</strong> Many email clients block external images by default. Use absolute URLs for images and provide alt text.
-                </div>
-            </div>
-            
-            <div class="preview">
-                <h2>HTML Email Example</h2>
-                <p>This is how your HTML email could look:</p>
-                
-                <div class="email-preview">
-                    <div class="email-header">
-                        <h3>Your Company Newsletter</h3>
-                        <p>October 2023 | Special Offers Inside</p>
-                    </div>
-                    
-                    <div class="email-body">
-                        <h4>Hello [Name],</h4>
-                        <p>Thank you for subscribing to our newsletter. Here's what's new this month:</p>
-                        
-                        <div style="background: #f0f7ff; padding: 15px; border-radius: 5px; margin: 15px 0;">
-                            <h4>✨ New Product Launch</h4>
-                            <p>Check out our latest product with amazing features designed just for you.</p>
-                            <a href="#" style="background: #4a6ee0; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; margin-top: 10px;">Learn More</a>
-                        </div>
-                        
-                        <div style="background: #fff0f0; padding: 15px; border-radius: 5px; margin: 15px 0;">
-                            <h4>🔥 Limited Time Offer</h4>
-                            <p>Get 20% off all products with code: <strong>OCT23</strong>. Offer ends soon!</p>
-                        </div>
-                        
-                        <p>We hope you enjoy these updates. Feel free to reply to this email with any questions.</p>
-                        
-                        <p>Best regards,<br>The Company Team</p>
-                    </div>
-                    
-                    <div class="email-footer">
-                        <p>© 2023 Your Company. All rights reserved.</p>
-                        <p>123 Business Street, City, State 12345</p>
-                        <p><a href="#" style="color: #4a6ee0;">Unsubscribe</a> | <a href="#" style="color: #4a6ee0;">View in Browser</a></p>
-                    </div>
-                </div>
-                
-                <h3>HTML Email Best Practices</h3>
-                <ul>
-                    <li>Use table-based layouts for maximum compatibility</li>
-                    <li>Inline all CSS styles (most email clients ignore &lt;style&gt; tags)</li>
-                    <li>Keep width between 600-800 pixels</li>
-                    <li>Use web-safe fonts and fallbacks</li>
-                    <li>Include a plain-text version for accessibility</li>
-                    <li>Always test before sending to your entire list</li>
-                </ul>
-                
-                <a href="#" class="btn">Download HTML Template</a>
-            </div>
-        </div>
+  <section id="about">
+    <h3>About Me</h3>
+    <p>I’m a full-stack developer passionate about clean, intuitive web design. I enjoy turning complex ideas into simple, beautiful products.</p>
+  </section>
+
+  <section id="skills">
+    <h3>Skills</h3>
+    <div class="skills-list">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>React</span>
+      <span>Node.js</span>
+      <span>Figma</span>
+      <span>UI/UX</span>
     </div>
+  </section>
 
-    <script>
-        document.getElementById('copyHtmlBtn').addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // HTML template for email
-            const htmlTemplate = `<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Newsletter</title>
-</head>
-<body style="margin: 0; padding: 0; font-family: Arial, sans-serif;">
-    <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: 0 auto; background: #f9f9f9;">
-        <tr>
-            <td align="center" style="background: #4a6ee0; color: white; padding: 20px;">
-                <h1>Your Company Newsletter</h1>
-                <p>October 2023 | Special Offers Inside</p>
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 20px; background: white;">
-                <h2>Hello [Name],</h2>
-                <p>Thank you for subscribing to our newsletter. Here's what's new this month:</p>
-                
-                <div style="background: #f0f7ff; padding: 15px; border-radius: 5px; margin: 15px 0;">
-                    <h3 style="color: #4a6ee0; margin-top: 0;">✨ New Product Launch</h3>
-                    <p>Check out our latest product with amazing features designed just for you.</p>
-                    <a href="#" style="background: #4a6ee0; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; display: inline-block;">Learn More</a>
-                </div>
-                
-                <p>We hope you enjoy these updates. Feel free to reply with any questions.</p>
-                
-                <p>Best regards,<br>The Company Team</p>
-            </td>
-        </tr>
-        <tr>
-            <td align="center" style="background: #333; color: white; padding: 15px; font-size: 12px;">
-                <p>© 2023 Your Company. All rights reserved.</p>
-                <p><a href="#" style="color: #4a6ee0;">Unsubscribe</a> | <a href="#" style="color: #4a6ee0;">View in Browser</a></p>
-            </td>
-        </tr>
-    </table>
-</body>
-</html>`;
-            
-            // Copy to clipboard
-            navigator.clipboard.writeText(htmlTemplate).then(function() {
-                const originalText = e.target.textContent;
-                e.target.textContent = 'HTML Copied!';
-                setTimeout(() => {
-                    e.target.textContent = originalText;
-                }, 2000);
-            });
-        });
-    </script>
+  <section id="projects">
+    <h3>Projects</h3>
+    <div class="project-grid">
+      <div class="project">
+        <h4>Portfolio Website</h4>
+        <p>A clean and modern personal portfolio built with focus on performance and style.</p>
+      </div>
+      <div class="project">
+        <h4>Task Manager App</h4>
+        <p>Organize your daily goals efficiently with a minimal interface and cloud sync.</p>
+      </div>
+      <div class="project">
+        <h4>Design System</h4>
+        <p>Reusable UI components for faster product development and consistency.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>Get in Touch</h3>
+    <p>If you’d like to collaborate or just say hi, reach out anytime.</p>
+    <p><a href="mailto:johndoe@example.com">johndoe@example.com</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 John Doe. Built with passion and caffeine.</p>
+  </footer>
+
+  <div class="contact-btn" onclick="window.location.href='mailto:johndoe@example.com'">✉️</div>
+
+  <script>
+    // Parallax background
+    const hero = document.querySelector(".hero");
+    window.addEventListener("scroll", () => {
+      const offset = window.scrollY * 0.3;
+      hero.style.backgroundPositionY = offset + "px";
+    });
+
+    // Scroll reveal
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(sec => observer.observe(sec));
+
+    // Scroll progress
+    const progress = document.getElementById("progress");
+    window.addEventListener("scroll", () => {
+      const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      progress.style.width = scrolled + "%";
+    });
+
+    // Theme toggle
+    const toggle = document.getElementById("themeToggle");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    });
+  </script>
 </body>
 </html>
