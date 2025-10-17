@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Email Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(to right, #4a6ee0, #6a11cb);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+        
+        .methods {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            background: #f9f9f9;
+        }
+        
+        .preview {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            background: white;
+        }
+        
+        h2 {
+            color: #4a6ee0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eaeaea;
+        }
+        
+        h3 {
+            color: #6a11cb;
+            margin: 25px 0 15px;
+        }
+        
+        .method-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #4a6ee0;
+        }
+        
+        .method-card h4 {
+            color: #4a6ee0;
+            margin-bottom: 10px;
+        }
+        
+        .email-preview {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .email-header {
+            background: #4a6ee0;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .email-body {
+            background: white;
+            padding: 20px;
+        }
+        
+        .email-footer {
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 0 0 5px 5px;
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #4a6ee0;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+        
+        .btn:hover {
+            background: #3a5ec0;
+        }
+        
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 0.85rem;
+        }
+        
+        .tip {
+            background: #e6f7ff;
+            border-left: 4px solid #1890ff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .warning {
+            background: #fffbe6;
+            border-left: 4px solid #faad14;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>How to Send HTML Emails</h1>
+            <p class="subtitle">A complete guide to creating and sending styled emails with backgrounds and images</p>
+        </header>
+        
+        <div class="content">
+            <div class="methods">
+                <h2>Methods for Sending HTML Emails</h2>
+                
+                <div class="method-card">
+                    <h4>1. Email Marketing Platforms</h4>
+                    <p>Use services like Mailchimp, Constant Contact, or Sendinblue that provide templates and sending tools.</p>
+                    <ul>
+                        <li>Drag-and-drop editors</li>
+                        <li>Pre-designed templates</li>
+                        <li>Analytics and tracking</li>
+                        <li>List management</li>
+                    </ul>
+                    <a href="#" class="btn">Explore Platforms</a>
+                </div>
+                
+                <div class="method-card">
+                    <h4>2. Gmail/Outlook (Manual)</h4>
+                    <p>Copy and paste HTML directly into email clients that support HTML.</p>
+                    <ol>
+                        <li>Create your HTML email</li>
+                        <li>Use browser developer tools to copy the element</li>
+                        <li>Paste into Gmail or Outlook compose window</li>
+                    </ol>
+                    <a href="#" class="btn" id="copyHtmlBtn">Copy HTML Code</a>
+                </div>
+                
+                <div class="method-card">
+                    <h4>3. Programming (SMTP)</h4>
+                    <p>Use code to send HTML emails programmatically with libraries like Nodemailer (Node.js) or PHPMailer.</p>
+                    <pre><code>// Node.js example with Nodemailer
+const nodemailer = require('nodemailer');
+
+let transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'your@gmail.com',
+    pass: 'your-password'
+  }
+});
+
+let mailOptions = {
+  from: 'your@gmail.com',
+  to: 'recipient@example.com',
+  subject: 'HTML Email',
+  html: '&lt;h1&gt;Hello World&lt;/h1&gt;&lt;p&gt;This is HTML content&lt;/p&gt;'
+};
+
+transporter.sendMail(mailOptions);</code></pre>
+                    <a href="#" class="btn">View More Examples</a>
+                </div>
+                
+                <div class="tip">
+                    <strong>Tip:</strong> Always test your HTML emails across different clients (Gmail, Outlook, Apple Mail) as they render HTML differently.
+                </div>
+                
+                <div class="warning">
+                    <strong>Important:</strong> Many email clients block external images by default. Use absolute URLs for images and provide alt text.
+                </div>
+            </div>
+            
+            <div class="preview">
+                <h2>HTML Email Example</h2>
+                <p>This is how your HTML email could look:</p>
+                
+                <div class="email-preview">
+                    <div class="email-header">
+                        <h3>Your Company Newsletter</h3>
+                        <p>October 2023 | Special Offers Inside</p>
+                    </div>
+                    
+                    <div class="email-body">
+                        <h4>Hello [Name],</h4>
+                        <p>Thank you for subscribing to our newsletter. Here's what's new this month:</p>
+                        
+                        <div style="background: #f0f7ff; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                            <h4>✨ New Product Launch</h4>
+                            <p>Check out our latest product with amazing features designed just for you.</p>
+                            <a href="#" style="background: #4a6ee0; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; display: inline-block; margin-top: 10px;">Learn More</a>
+                        </div>
+                        
+                        <div style="background: #fff0f0; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                            <h4>🔥 Limited Time Offer</h4>
+                            <p>Get 20% off all products with code: <strong>OCT23</strong>. Offer ends soon!</p>
+                        </div>
+                        
+                        <p>We hope you enjoy these updates. Feel free to reply to this email with any questions.</p>
+                        
+                        <p>Best regards,<br>The Company Team</p>
+                    </div>
+                    
+                    <div class="email-footer">
+                        <p>© 2023 Your Company. All rights reserved.</p>
+                        <p>123 Business Street, City, State 12345</p>
+                        <p><a href="#" style="color: #4a6ee0;">Unsubscribe</a> | <a href="#" style="color: #4a6ee0;">View in Browser</a></p>
+                    </div>
+                </div>
+                
+                <h3>HTML Email Best Practices</h3>
+                <ul>
+                    <li>Use table-based layouts for maximum compatibility</li>
+                    <li>Inline all CSS styles (most email clients ignore &lt;style&gt; tags)</li>
+                    <li>Keep width between 600-800 pixels</li>
+                    <li>Use web-safe fonts and fallbacks</li>
+                    <li>Include a plain-text version for accessibility</li>
+                    <li>Always test before sending to your entire list</li>
+                </ul>
+                
+                <a href="#" class="btn">Download HTML Template</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('copyHtmlBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // HTML template for email
+            const htmlTemplate = `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Newsletter</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif;">
+    <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: 0 auto; background: #f9f9f9;">
+        <tr>
+            <td align="center" style="background: #4a6ee0; color: white; padding: 20px;">
+                <h1>Your Company Newsletter</h1>
+                <p>October 2023 | Special Offers Inside</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 20px; background: white;">
+                <h2>Hello [Name],</h2>
+                <p>Thank you for subscribing to our newsletter. Here's what's new this month:</p>
+                
+                <div style="background: #f0f7ff; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                    <h3 style="color: #4a6ee0; margin-top: 0;">✨ New Product Launch</h3>
+                    <p>Check out our latest product with amazing features designed just for you.</p>
+                    <a href="#" style="background: #4a6ee0; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; display: inline-block;">Learn More</a>
+                </div>
+                
+                <p>We hope you enjoy these updates. Feel free to reply with any questions.</p>
+                
+                <p>Best regards,<br>The Company Team</p>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="background: #333; color: white; padding: 15px; font-size: 12px;">
+                <p>© 2023 Your Company. All rights reserved.</p>
+                <p><a href="#" style="color: #4a6ee0;">Unsubscribe</a> | <a href="#" style="color: #4a6ee0;">View in Browser</a></p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>`;
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(htmlTemplate).then(function() {
+                const originalText = e.target.textContent;
+                e.target.textContent = 'HTML Copied!';
+                setTimeout(() => {
+                    e.target.textContent = originalText;
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
